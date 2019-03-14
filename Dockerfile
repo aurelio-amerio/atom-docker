@@ -1,10 +1,10 @@
 FROM conda/miniconda3
 RUN apt-get update && \
-    apt-get install wget -y &&\
+    apt-get install --no-install-recommends -y wget gnupg dirmngr &&\
     wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add - &&\
     sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list' &&\
     apt-get update && \
-    apt-get install atom -y &&\
+    apt-get install --no-install-recommends -y atom &&\
     apt-get clean &&\
     conda install -c anaconda jupyter -y &&\
     conda install -c conda-forge python-language-server -y &&\
