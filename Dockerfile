@@ -1,6 +1,6 @@
 FROM conda/miniconda3
 RUN apt-get update && \
-    apt-get install wget\
+    apt-get install wget &&\
     wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add - &&\
     sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list' &&\
     apt-get update && \
