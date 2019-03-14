@@ -11,9 +11,4 @@ RUN wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add - &&
     apm install hydrogen &&\
     conda clean --yes --all
 
-
-
-
-
-
 CMD atom
