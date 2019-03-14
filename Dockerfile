@@ -17,4 +17,4 @@ RUN apm install atom-ide-ui &&\
     apm install ide-python &&\
     apm install hydrogen
     
-CMD atom
+CMD /usr/bin/atom
