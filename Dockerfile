@@ -1,12 +1,12 @@
 FROM conda/miniconda3
 
 RUN apt-get update && \
-    apt-get install --no-install-recommends -y wget gnupg dirmngr &&\
+    apt-get install -y wget gnupg dirmngr apt-transport-https ca-certificates &&\
     wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add - &&\
     echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list
 
 RUN apt-get update && \
-    apt-get install --no-install-recommends -y atom &&\
+    apt-get install -y atom &&\
     apt-get clean
 
 RUN conda install -c anaconda jupyter -y &&\
