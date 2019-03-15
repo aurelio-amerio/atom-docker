@@ -16,4 +16,4 @@ RUN apt-get update &&\
     apm install hydrogen
     
 # start atom
-CMD /usr/bin/atom
+CMD ["/usr/bin/atom","-f"]
